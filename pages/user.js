@@ -1,25 +1,19 @@
 import Base from '../components/Base.js'
 
-class Index extends React.Component {
+class User extends React.Component {
   render() {
     return (
       <Base>
-        <form id='search' action='user'>
-          <label htmlFor='nickname'></label>
-          <input type='text' id='nickname' name='nickname' placeholder='닉네임을 적어주세요...'></input>
-          <input type='submit' value='검색'></input>
-        </form>
+      {/* 여기에 만들어 */}
         <style jsx>{`
-          #search {
-            text-align: center;
-          }
+          
         `}</style>
       </Base>
     )
   }
 }
 
-export default Index
+export default User
 
 // ------------------------------------------------------------------------------------------------------ //
 
