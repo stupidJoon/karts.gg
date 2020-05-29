@@ -1,7 +1,34 @@
+import { useRouter } from 'next/router'
+
 import Base from '../components/Base.js'
 
 class User extends React.Component {
+  static getInitialProps({query}) {
+    return {query}
+  }
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      nickname: props.query.nickname,
+      uuid: null
+    }
+  }
+
+  async componentDidMount() {
+    let uuid = await fetch(`https://api.nexon.co.kr/kart/v1.0/users/nickname/${this.state.nickname}`, { headers: { 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiMzE5NDIzNjMxIiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExMzkzIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjIwMDAwOjEwIiwibmJmIjoxNTkwNzEzMjY3LCJleHAiOjE2NTM3ODUyNjcsImlhdCI6MTU5MDcxMzI2N30.yaNbESgBdBVW0iqqyEUju589P1iZSxMhIsN7pMa_fsg' } });
+    uuid = (await uuid.json()).accessId;
+    console.log(uuid)
+    let matchList = await fetch(`https://api.nexon.co.kr/kart/v1.0/users/${uuid}/matches?limit=200`, { headers: { 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50X2lkIjoiMzE5NDIzNjMxIiwiYXV0aF9pZCI6IjIiLCJ0b2tlbl90eXBlIjoiQWNjZXNzVG9rZW4iLCJzZXJ2aWNlX2lkIjoiNDMwMDExMzkzIiwiWC1BcHAtUmF0ZS1MaW1pdCI6IjIwMDAwOjEwIiwibmJmIjoxNTkwNzEzMjY3LCJleHAiOjE2NTM3ODUyNjcsImlhdCI6MTU5MDcxMzI2N30.yaNbESgBdBVW0iqqyEUju589P1iZSxMhIsN7pMa_fsg' } });
+    matchList = await matchList.json();
+    console.log(matchList)
+    this.setState({
+      uuid: uuid
+    })
+  }
+
   render() {
+    console.log(this.props.query)
     return (
       <Base>
       {/* 여기에 만들어 */}
