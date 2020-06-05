@@ -1,6 +1,8 @@
 import { useRouter } from 'next/router'
 
 import Base from '../components/Base.js'
+import Match from '../components/Match.js'
+import { Divider } from 'antd'
 
 class User extends React.Component {
   static getInitialProps({query}) {
@@ -11,7 +13,8 @@ class User extends React.Component {
     super(props)
     this.state = {
       nickname: props.query.nickname,
-      uuid: null
+      uuid: null,
+      matches: []
     }
   }
 
@@ -23,17 +26,45 @@ class User extends React.Component {
     matchList = await matchList.json();
     console.log(matchList)
     this.setState({
-      uuid: uuid
-    })
+      uuid: uuid,
+      matches: matchList.matches.reduce((acc, val) => { return acc.concat(val.matches) }, [])
+    });
   }
 
   render() {
+    let { nickname, matches } = this.state;
+    console.log(matches);
     console.log(this.props.query)
     return (
       <Base>
-      {/* 여기에 만들어 */}
+        <div id='userInfoBox'>
+          <p id='nickname' name="nickname">{nickname}</p>
+        </div>
+        {matches.map((match, index) => {
+          return (
+            <Match key={index} match={match}></Match>
+          )
+        })}
         <style jsx>{`
-          
+          #userInfoBox {
+            display:table;
+            border : 2px solid black;
+            height:10vw;
+            width:90%;
+            margin: 5vw auto auto 7vw;
+          }
+          #nickname {
+            display: inline-block;
+            display: table-cell; vertical-align: middle;
+            font-size : 30px;
+            font-weight : bold;
+            margin : 0 auto;
+            top: 0; 
+            bottom:0; 
+            margin-top:auto; 
+            margin-bottom:auto;
+            padding-left: 5%;
+          }
         `}</style>
       </Base>
     )
