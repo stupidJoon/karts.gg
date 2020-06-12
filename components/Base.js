@@ -5,7 +5,7 @@ const { Header, Content, Footer } = Layout;
 class Base extends React.Component {
     render() {
         return (
-            <>
+            <div id='container'>
                 <div id='logo_container'>
                     <div id='logo'>kart.gg</div>
                 </div>
@@ -17,8 +17,26 @@ class Base extends React.Component {
                         <li>랭킹</li>
                     </ul>
                 </div>
-                {this.props.children}
+                <div id='childrenContainer'>
+                    <div style={{flex: '1 1 auto'}}></div>
+                    <div style={{flex: '3 3 auto', backgroundColor: 'grey'}}>{this.props.children}</div>
+                    <div style={{flex: '1 1 auto'}}></div>
+                </div>
                 <style jsx>{`
+                    #container {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100vw;
+                        height: 100vh;
+                    }
+
+                    #childrenContainer {
+                        display: flex;
+                        flex-direction: row;
+                        height: 100%;
+                        width: 100%;
+                    }
+
                     #logo_container {
                         width: 100vw;  
                         display: flex;
@@ -52,7 +70,7 @@ class Base extends React.Component {
                         text-align: center;
                     }
                 `}</style>
-            </>
+            </div>
             // <Layout className='layout'>
             //     <Header>
             //         <h1 className="logo">Karts.gg</h1>
