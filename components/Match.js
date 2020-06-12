@@ -9,6 +9,9 @@ class Match extends React.Component {
         let kart = meta.karts.find(({ id }) => { return match.player.kart == id });
         kart = (kart == null) ? '알 수 없는 카트' : kart.name;
         let time = match.player.matchTime / 1000;
+        if (time == 0) {
+          return (false);
+        }
         return (
             <>
                 <div id="mapInfoBox">
