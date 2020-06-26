@@ -41,6 +41,11 @@ class User extends React.Component {
           {(character != null) ? (<img src={`../character/${matches[0].character}.png`}/>) : (<></>)}
           <h3>{nickname}</h3>
         </Card>
+        {matches.map((match, index) => {
+          return (
+            <Match key={index} match={match}></Match>
+          )
+        })}
       </Base>
     )
 
