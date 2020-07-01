@@ -1,7 +1,3 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-
-const { Header, Content, Footer } = Layout;
-
 class Base extends React.Component {
     static getInitialProps({query}) {
         return {query}
@@ -10,39 +6,44 @@ class Base extends React.Component {
     render() {
         console.log(this.props.query)
         return (
-            <>
-                <Layout className="layout" style={{ minHeight: '100vh' }}>
-                    <Header>
-                        <div className="logo" />
-                        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-                            <Menu.Item key="1">홈</Menu.Item>
-                            <Menu.Item key="2">카트 분석</Menu.Item>
-                            <Menu.Item key="3">통계</Menu.Item>
-                            <Menu.Item key="4">랭킹</Menu.Item>
-                        </Menu>
-                    </Header>
-                    <Content style={{ margin: '5% 10%' }}>
-                        <div className="site-layout-content">
-                            {this.props.children}
-                        </div>
-                    </Content>
-                    <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
-                </Layout>
-                <style jsx>{`
-                    .site-layout-content {
-                        background: #fff;
-                        padding: 24px;
-                        min-height: 280px;
-                      }
-                      #components-layout-demo-top .logo {
-                        width: 120px;
-                        height: 31px;
-                        background: rgba(255, 255, 255, 0.2);
-                        margin: 16px 24px 16px 0;
-                        float: left;
-                      }
-                `}</style>
-            </>
+            <div style={{'height': '100vh'}}>
+                <div></div>
+            </div>
+
+
+            // <>
+            //     <Layout className="layout" style={{ minHeight: '100vh' }}>
+            //         <Header>
+            //             <div className="logo" />
+            //             <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            //                 <Menu.Item key="1">홈</Menu.Item>
+            //                 <Menu.Item key="2">카트 분석</Menu.Item>
+            //                 <Menu.Item key="3">통계</Menu.Item>
+            //                 <Menu.Item key="4">랭킹</Menu.Item>
+            //             </Menu>
+            //         </Header>
+            //         <Content style={{ margin: '5% 10%' }}>
+            //             <div className="site-layout-content">
+            //                 {this.props.children}
+            //             </div>
+            //         </Content>
+            //         <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+            //     </Layout>
+            //     <style jsx>{`
+            //         .site-layout-content {
+            //             background: #fff;
+            //             padding: 24px;
+            //             min-height: 280px;
+            //           }
+            //           #components-layout-demo-top .logo {
+            //             width: 120px;
+            //             height: 31px;
+            //             background: rgba(255, 255, 255, 0.2);
+            //             margin: 16px 24px 16px 0;
+            //             float: left;
+            //           }
+            //     `}</style>
+            // </>
 
             // <div id='container'>
             //     <div id='logo_container'>

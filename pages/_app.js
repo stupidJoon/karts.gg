@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css';
+import '../public/styles.css'
 
 function MyApp({ Component, pageProps }) {
     return <Component {...pageProps} />
