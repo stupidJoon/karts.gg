@@ -1,15 +1,22 @@
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
+// import { MenuIcon } from '@material-ui/icons'
+
 class Base extends React.Component {
-    static getInitialProps({query}) {
-        return {query}
+    static getInitialProps({ query }) {
+        return { query }
     }
 
     render() {
         console.log(this.props.query)
         return (
-            <div style={{'height': '100vh'}}>
-                <div>asds</div>
-            </div>
-
+            <>
+                <AppBar position='sticky'>
+                    <Toolbar>
+                        <Typography variant='h5' color='inherit'>Karts.gg</Typography>
+                    </Toolbar>
+                </AppBar>
+                {this.props.children}
+            </>
 
             // <>
             //     <Layout className="layout" style={{ minHeight: '100vh' }}>
