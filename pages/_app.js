@@ -1,7 +1,12 @@
-import '../public/styles.css'
+import App from 'next/app'
 
-function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
+class RootApp extends App {
+    render() {
+        const { Component, ...pageProps } = this.props;
+        return (
+            <Component {...pageProps} />
+        )
+    }
 }
 
-export default MyApp
+export default RootApp;

@@ -7,7 +7,7 @@ class Base extends React.Component {
         console.log(this.props.query)
         return (
             <div style={{'height': '100vh'}}>
-                <div></div>
+                <div>asds</div>
             </div>
 
 

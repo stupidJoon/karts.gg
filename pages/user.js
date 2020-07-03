@@ -38,12 +38,12 @@ class User extends React.Component {
     return (
       <Base>
         <Card title="유저 정보" style={{ margin: '5%' }}>
-          {(character != null) ? (<img src={`../character/${matches[0].character}.png`}/>) : (<></>)}
-          <h3>{nickname}</h3>
+          {(character != null) ? (<img src={`../character/${matches[0].character}.png`} style={{ float: 'right' }}/>) : (<></>)}
+          <h1>{nickname}</h1>
         </Card>
         {matches.map((match, index) => {
           return (
-            <Match key={index} match={match}></Match>
+            <Match key={index} match={match} style={{ minWidth: '50%' }}></Match>
           )
         })}
       </Base>
