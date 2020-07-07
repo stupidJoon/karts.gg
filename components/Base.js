@@ -25,6 +25,7 @@ class Base extends React.Component {
 
                 `}</style>
             </>
+
             // <Layout className='layout'>
             //     <Header>
             //         <h1 className="logo">Karts.gg</h1>
