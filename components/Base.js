@@ -1,22 +1,28 @@
-import { Layout, Menu, Breadcrumb } from 'antd';
-
-const { Header, Content, Footer } = Layout;
+import { AppBar, Toolbar, IconButton, Typography, Button } from '@material-ui/core';
+import { Menu } from '@material-ui/icons';
 
 class Base extends React.Component {
+    componentDidMount() {
+        document.body.style.margin = '0px';
+        document.body.style.padding = '0px';
+    }
+
     render() {
         return (
             <>
-                <div id='container'>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+                <AppBar position="static">
+                    <Toolbar>
+                        <IconButton color="inherit">
+                            <Menu />
+                        </IconButton>
+                        <Typography variant="h6">
+                            Logo
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                {this.props.children}
                 <style jsx>{`
-                    #container {
-                        width: 100vw;
-                        height: 100vh;
-                        display: flex;
-                    }
+
                 `}</style>
             </>
             // <Layout className='layout'>
