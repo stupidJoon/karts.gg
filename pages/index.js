@@ -7,15 +7,15 @@ class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      'nickname': null
+      nickname: null
     };
   }
 
   render() {
     return (
       <Base>
-        <TextField variant='outlined' label='label' onChange={(e) => { this.setState({nickName: e.target.value}) }} />
-        <Button variant='contained' onClick={() => { Router.push(`/user?nickname=${this.state.nickName}`) }}>Button</Button>
+        <TextField variant='outlined' label='label' onChange={(e) => { this.setState({nickname: e.target.value}) }} />
+        <Button variant='contained' onClick={() => { location.href=`/user?nickname=${this.state.nickname}` }}>Button</Button>
       </Base>
     )
   }
