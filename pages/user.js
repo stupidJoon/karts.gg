@@ -24,6 +24,7 @@ class User extends React.Component {
       uuid: uuid,
       matches: matchList.matches.reduce((acc, val) => { return acc.concat(val.matches) }, [])
     });
+    console.log(this.state.matches)
   }
 
   render() {
@@ -32,8 +33,8 @@ class User extends React.Component {
     console.log(matches);
     return (
       <Base>
-        <div style={{ margin: '5%' }}>
-          {(character != null) ? (<img src={`../character/${matches[0].character}.png`} style={{ float: 'right' }} />) : (<></>)}
+        <div style={{ margin: '5%', marginBottom: '20%' }}>
+          {(character != null) ? (<img src={`../character/${matches[0].character}.png`} style={{ float: 'right', width: '30%' }} />) : (<></>)}
           <h1>{nickname}</h1>
         </div>
         {matches.map((match, index) => {
