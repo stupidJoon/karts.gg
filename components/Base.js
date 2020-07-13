@@ -9,8 +9,8 @@ class Base extends React.Component {
 
     render() {
         return (
-            <>
-                <AppBar position="static">
+            <div style={{ width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+                <AppBar style={{ flex: '1 1 0', position: 'relative' }}>
                     <Toolbar>
                         <IconButton color="inherit">
                             <Menu />
@@ -24,7 +24,7 @@ class Base extends React.Component {
                 <style jsx>{`
 
                 `}</style>
-            </>
+            </div>
 
             // <Layout className='layout'>
             //     <Header>

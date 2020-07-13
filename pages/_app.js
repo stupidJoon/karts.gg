@@ -1,5 +1,5 @@
-
 import App from 'next/app'
+import 'swiper/swiper-bundle.css';
 
 class RootApp extends App {
     componentDidMount() {
