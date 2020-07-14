@@ -1,6 +1,5 @@
 import Base from '../components/Base.js'
 import Match from '../components/Match.js'
-import router from 'next/router';
 
 class User extends React.Component {
   constructor(props) {
