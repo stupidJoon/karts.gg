@@ -16,7 +16,7 @@ class Base extends React.Component {
                             <Menu />
                         </IconButton>
                         <Typography variant="h6">
-                            Logo
+                            Karts.gg
                         </Typography>
                     </Toolbar>
                 </AppBar>
