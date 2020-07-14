@@ -22,7 +22,7 @@ class Index extends React.Component {
           <Swiper style={{ flex: '5 1 0', width: '100vw' }} pagination={{ clickable: true }} navigation loop>
             <SwiperSlide><img src='../1.png' style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: '50% 50%' }} /></SwiperSlide>
             <SwiperSlide><img src='../2.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: '50% 50%' }} /></SwiperSlide>
-            <SwiperSlide><img src='../3.png' style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: '50% 50%' }} /></SwiperSlide>
+            <SwiperSlide><img src='../3.jpg' style={{ height: '100%', width: '100%', objectFit: 'cover', objectPosition: '50% 50%' }} /></SwiperSlide>
           </Swiper>
           <div style={{ flex: '1 1 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <TextField variant='outlined' label='label' onChange={(e) => { this.setState({ nickname: e.target.value }) }} />
