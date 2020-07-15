@@ -1,5 +1,5 @@
-import Base from '../components/Base.js'
-import Match from '../components/Match.js'
+import Base from '../components/Base.js';
+import Match from '../components/Match.js';
 
 class User extends React.Component {
   constructor(props) {
@@ -32,10 +32,10 @@ class User extends React.Component {
     console.log(matches);
     return (
       <Base>
-        <div style={{ margin: '5%', marginBottom: '20%' }}>
+        {/* <div style={{ margin: '5%', marginBottom: '20%' }}>
           {(character != null) ? (<img src={`../character/${matches[0].character}.png`} style={{ float: 'right', width: '30%' }} />) : (<></>)}
           <h1>{nickname}</h1>
-        </div>
+        </div> */}
         {matches.map((match, index) => {
           return (<Match key={index} match={match} style={{ minWidth: '50%' }}></Match>)
         })}
